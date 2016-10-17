@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="web-interface:war exploded">
+    <output-path>$PROJECT_DIR$/web-interface/target/admin</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="web-interface" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="web-interface-1.0.jar">
+            <element id="module-output" name="web-interface" />
+          </element>
+          <element id="library" level="project" name="Maven: org.primefaces:primefaces:6.0" />
+          <element id="library" level="project" name="Maven: org.primefaces.themes:afterwork:1.0.10" />
+          <element id="archive" name="connect-ws-lib-1.0.jar">
+            <element id="module-output" name="connect-ws-lib" />
+          </element>
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/web-interface/target/admin/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="web-interface/web/Web" />
+    </root>
+  </artifact>
+</component>

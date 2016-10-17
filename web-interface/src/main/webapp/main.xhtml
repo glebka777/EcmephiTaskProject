@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <h:outputStylesheet library="css" name="main.css"/>
+</h:head>
+<h:body style="background-color: lightgray">
+    <h:form id="main_form">
+        <p:panelGrid columns="1" border="1">
+            <p:panel>
+                <h:outputText value="Logged as: "/>
+                <h:outputText value="#{webUIController.superUser.username}"/>
+            </p:panel>
+            <p:panel>
+                <h:outputText value="Role: "/>
+                <h:outputText value="#{webUIController.superUser.role}"/>
+            </p:panel>
+        </p:panelGrid>
+
+        <p:panelGrid width="100%" cellspacing="10" columns="2" border="0" styleClass="centered-form">
+
+            <p:tabView>
+
+                <p:tab title="Create">
+                    <p:panelGrid styleClass="tab">
+                        <p:row styleClass="center-align">
+                            <p:column visible="false">
+                                <h:outputText value="Create new user"/>
+                            </p:column>
+                            <p:column>
+                                <h:outputText value="Username"/>
+                                <br/>
+                                <p:inputText value="#{webUIController.newUsername}"/>
+                            </p:column>
+                            <p:column>
+                                <h:outputText value="Password"/>
+                                <br/>
+                                <p:inputText value="#{webUIController.newPassword}"/>
+                            </p:column>
+                            <p:column>
+                                <h:outputText value="Admin"/>
+                                <br/>
+                                <p:selectBooleanCheckbox value="#{webUIController.newAdmin}"/>
+                            </p:column>
+                            <p:column>
+                                <p:commandButton ajax="false" action="#{webUIController.createNewUser}"
+                                                 value="Create"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                </p:tab>
+
+                <p:tab title="Delete">
+                    <p:panelGrid styleClass="tab">
+                        <p:row styleClass="center-align">
+                            <p:column>
+                                <h:outputText value="Delete user"/>
+                            </p:column>
+                            <p:column colspan="3">
+                                <h:outputText value="Id"/>
+                                <br/>
+                                <p:inputText value="#{webUIController.idToDelete}" converter="javax.faces.Long"/>
+                            </p:column>
+                            <p:column>
+                                <p:commandButton ajax="false" action="#{webUIController.deleteUser}"
+                                                 value="Delete"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                </p:tab>
+
+                <p:tab title="Modify">
+                    <p:panelGrid styleClass="tab">
+                        <p:row styleClass="center-align">
+                            <p:column>
+                                <h:outputText value="Change user rights"/>
+                            </p:column>
+                            <p:column>
+                                <h:outputText value="Id"/>
+                                <br/>
+                                <p:inputText value="#{webUIController.idToChange}" converter="javax.faces.Long"/>
+                            </p:column>
+                            <p:column>
+                                change to
+                            </p:column>
+                            <p:column>
+                                <p:selectOneListbox value="#{webUIController.changeToAdmin}"
+                                                    converter="javax.faces.Boolean">
+                                    <f:selectItem itemValue="false" itemLabel="User"/>
+                                    <f:selectItem itemValue="true" itemLabel="Administrator"/>
+                                </p:selectOneListbox>
+                            </p:column>
+                            <p:column>
+                                <p:commandButton ajax="false" action="#{webUIController.changeRights}"
+                                                 value="Change"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                </p:tab>
+
+                <p:tab title="Log">
+                    <p:panelGrid styleClass="tab">
+                        <p:row styleClass="center-align">
+                            <p:column>
+                                <h:outputText value="Clear user log"/>
+                            </p:column>
+                            <p:column colspan="3">
+                                <h:outputText value="Id"/>
+                                <br/>
+                                <p:inputText value="#{webUIController.idToClear}" converter="javax.faces.Long"/>
+                            </p:column>
+                            <p:column>
+                                <p:commandButton ajax="false" action="#{webUIController.clearUserLog}"
+                                                 value="Clear"/>
+                            </p:column>
+                        </p:row>
+                        <p:row styleClass="center-align">
+                            <p:column>
+                                <h:outputText value="Get user log"/>
+                            </p:column>
+                            <p:column colspan="3">
+                                <h:outputText value="Id"/>
+                                <br/>
+                                <p:inputText value="#{webUIController.logId}" converter="javax.faces.Long"/>
+                            </p:column>
+                            <p:column>
+                                <p:commandButton ajax="false" action="#{webUIController.getUserLog}" value="Get"/>
+                            </p:column>
+                        </p:row>
+                        <p:row styleClass="right-align">
+                            <p:column colspan="5" styleClass="right-align">
+                                <h:inputTextarea value="#{webUIController.logHistory}" cols="65" rows="25"
+                                                 readonly="true" autoResize="false" styleClass="output-text"/>
+                                <br/>
+                                <p:commandButton ajax="false" action="#{webUIController.clearLogWindow}"
+                                                 value="Clear log window"/>
+                            </p:column>
+                        </p:row>
+                    </p:panelGrid>
+                </p:tab>
+
+            </p:tabView>
+
+            <h:panelGrid cellspacing="10" columns="1" border="0">
+                User table
+                <p:dataTable id="user_table" widgetVar="dataTableWidgetVar" value="#{webUIController.userList}"
+                             var="user" styleClass="center-align"
+                             scrollable="true"
+                             scrollHeight="475"
+                             rowExpandMode="single">
+                    <p:ajax event="rowToggle" update=":main_form:user_table" form=""/>
+                    <p:column headerText="Id" sortBy="#{user.id}">
+                        <h:outputText value="#{user.id}"/>
+                        <p:rowToggler/>
+                    </p:column>
+                    <p:column headerText="Username" sortBy="#{user.username}">
+                        <h:outputText value="#{user.username}"/>
+                    </p:column>
+                    <p:column headerText="Role" sortBy="#{user.role}">
+                        <h:outputText value="#{user.role}"/>
+                    </p:column>
+                    <p:rowExpansion>
+                        <p:panelGrid>
+                            <ui:include src="opts/delete_row.xhtml">
+                                <ui:param name="id" value="#{user.id}"/>
+                            </ui:include>
+                            <ui:include src="opts/modify_row.xhtml">
+                                <ui:param name="arg0" value="#{user.id}"/>
+                            </ui:include>
+                        </p:panelGrid>
+                    </p:rowExpansion>
+                </p:dataTable>
+
+                <p:row>
+                    <p:commandButton ajax="false" action="#{webUIController.getAllUsers}" value="Get user userList"/>
+                    <p:outputLabel value=" "/>
+                    <p:commandButton ajax="false" action="#{webUIController.clearUsersWindow}" value="Clear"/>
+                </p:row>
+            </h:panelGrid>
+
+            <h:panelGrid columns="1" border="0">
+                <p:messages layout="table" styleClass="messages" errorClass="errorMessages"
+                            infoClass="infoMessages"/>
+            </h:panelGrid>
+
+            <h:panelGrid columns="1" border="0">
+                <p:commandButton ajax="false" action="#{webUIController.logOff}" immediate="true"
+                                 value="Exit"/>
+            </h:panelGrid>
+
+        </p:panelGrid>
+    </h:form>
+</h:body>
+</html>

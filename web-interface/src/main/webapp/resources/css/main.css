@@ -1,0 +1,45 @@
+.centered-form {
+    margin: 0 auto;
+}
+
+.messages {
+    margin: 0 auto;
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+
+.infoMessages {
+    color: green;
+}
+
+.errorMessages {
+    color: red;
+}
+
+.top-align {
+    margin: 0 auto;
+    text-align: top;
+}
+
+.tab {
+    border: none;
+    width: 650px;
+    height: 100%;
+
+}
+
+.center-align {
+    text-align: center;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.output-text {
+    resize: none;
+    font-family: "Lucida Console", Monaco, monospace !important;
+}
+
+
+

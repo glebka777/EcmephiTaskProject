@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
+    <endpoint
+            name="UserWS"
+            implementation="me.ecmephi.task.service.UserManager"
+            url-pattern="/me/ecmephi/task/service/"/>
+</endpoints>

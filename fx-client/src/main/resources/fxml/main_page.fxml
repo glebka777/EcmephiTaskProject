@@ -1,0 +1,46 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="me.ecmephi.task.ui.controller.MainPageController" alignment="center" hgap="10" vgap="10">
+
+    <padding>
+        <Insets right="50" left="50" bottom="40" top="5"/>
+    </padding>
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="75.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="15.0" prefWidth="100.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" minHeight="10.0" percentHeight="10" prefHeight="100.0"/>
+        <RowConstraints vgrow="SOMETIMES" minHeight="10.0" percentHeight="40" prefHeight="100.0"/>
+        <RowConstraints vgrow="SOMETIMES" minHeight="10.0" percentHeight="50" prefHeight="100.0"/>
+    </rowConstraints>
+
+    <VBox alignment="BOTTOM_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Label text="Logged as:"/>
+        <Label text="Role:"/>
+    </VBox>
+    <VBox alignment="BOTTOM_LEFT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <Label fx:id="usernameLabel" text="USERNAME"/>
+        <Label fx:id="roleLabel" text="ROLE"/>
+    </VBox>
+
+
+    <VBox alignment="TOP_CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="2"
+          spacing="10.0">
+        <Button text="Load log" onAction="#loadLogButtonClick" prefWidth="125.0"/>
+        <Button text="Log off" onAction="#logoffButtonClick" prefWidth="125.0"/>
+        <Button text="Exit" onAction="#exitButtonClick" prefWidth="125.0"/>
+    </VBox>
+
+    <Label text="Log window" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextArea fx:id="logArea" prefWidth="-Infinity" GridPane.columnIndex="0" GridPane.rowIndex="1"
+              GridPane.rowSpan="2" editable="false"/>
+    <ProgressIndicator fx:id="progressIndicator" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                       GridPane.rowSpan="2"/>
+
+</GridPane>

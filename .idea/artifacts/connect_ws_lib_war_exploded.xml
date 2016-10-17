@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="connect-ws-lib:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/connect_ws_lib_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="connect-ws-lib/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="connect-ws-lib" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

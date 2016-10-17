@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="server_connect:war">
+    <output-path>$PROJECT_DIR$/server_connect/target</output-path>
+    <root id="archive" name="endpointWS.war">
+      <element id="artifact" artifact-name="server_connect:war exploded" />
+    </root>
+  </artifact>
+</component>
