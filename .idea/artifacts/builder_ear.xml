@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="ear" name="builder:ear">
-    <output-path>$PROJECT_DIR$/builder/target</output-path>
-    <root id="archive" name="userService.ear">
-      <element id="artifact" artifact-name="builder:ear exploded" />
-    </root>
-  </artifact>
-</component>
