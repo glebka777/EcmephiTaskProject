@@ -5,7 +5,6 @@
     <container qualifier="wildfly" default="true">
         <configuration>
             <property name="allowConnectingToRunningServer">true</property>
-            <property name="jbossHome">C:\_My Files\Programming_tools\java\wildfly-10.1.0.Final</property>
         </configuration>
     </container>
 </arquillian>
