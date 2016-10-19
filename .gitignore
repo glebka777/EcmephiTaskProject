@@ -5,5 +5,3 @@
 log/
 target/
 /user-service/src/test/resources/arquillian.xml
-fx-client/src/main/resources/META-INF/
-fx-client/src/main/resources/css/
