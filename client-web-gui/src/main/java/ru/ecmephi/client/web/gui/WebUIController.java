@@ -30,7 +30,7 @@ public class WebUIController {
     private static final String USER_EXISTS = "User with this name already exists.";
     private static final String INCORRECT_INPUT_ON_CREATE = "Incorrect input.\nUsername should contain 3-9 symbols." +
             "\nPassword should contain more than 3 symbols.";
-    private static final String INCORRECT_INPUT_ON_LOGIN = "Incorrect input.";
+    private static final String INCORRECT_INPUT_ON_LOGIN = "Wrong username or password.";
     private static final String MODIFY_ERROR = "Cannot modify current user.";
     private static final String USER_DOES_NOT_EXIST = "User does not exist.";
     private static final String UNKNOWN_ERROR = "Unknown error occurred.";
@@ -104,11 +104,12 @@ public class WebUIController {
             if (newAdmin) {
                 val changeAccessLevelRequest = new AdminProcedureRequest(superUser.getId(), id);
                 userService.grantAdministratorAccessLevel(changeAccessLevelRequest);
-                facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO, String.format("New administrator %s has been " +
+                facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO, String.format("New administrator '%s' has " +
+                        "been " +
                         "created (id = %d).", newUsername, id), null);
             }
             else {
-                facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO, String.format("New user %s has been created " +
+                facesMessage = new FacesMessage(FacesMessage.SEVERITY_INFO, String.format("New user '%s' has been created " +
                         "(id =" + "%d).", newUsername, id), null);
             }
         }

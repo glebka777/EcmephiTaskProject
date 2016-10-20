@@ -40,7 +40,6 @@
     <Label text="Log window" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
     <TextArea fx:id="logArea" prefWidth="-Infinity" GridPane.columnIndex="0" GridPane.rowIndex="1"
               GridPane.rowSpan="2" editable="false"/>
-    <ProgressIndicator fx:id="progressIndicator" GridPane.columnIndex="0" GridPane.rowIndex="1"
-                       GridPane.rowSpan="2"/>
+    <ProgressIndicator fx:id="progressIndicator" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.rowSpan="2"/>
 
 </GridPane>

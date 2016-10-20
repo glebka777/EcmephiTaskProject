@@ -24,7 +24,7 @@ public class ClientApp extends Application {
     public static final String INIT_ERROR = "Cannot start application.\nError occurred while loading resources.";
     public static final String CONNECTION_PROBLEM = "Connection problem occurred.";
     public static final String EMPTY_FIELDS = "Username field must not be empty.";
-    public static final String INCORRECT_INPUT = "Incorrect input.";
+    public static final String INCORRECT_INPUT = "Wrong username or password.";
     public static final String USER_DOES_NOT_EXIST = "User does not exist.";
     public static final String UNKNOWN_ERROR = "Unknown error occurred.";
 
