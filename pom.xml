@@ -71,12 +71,6 @@
             </dependency>
 
             <dependency>
-                <groupId>ru.ecmephi</groupId>
-                <artifactId>user-service-ws</artifactId>
-                <version>1.0</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
                 <version>1.1.11.Final</version>
