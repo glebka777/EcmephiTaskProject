@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>ecmephi-task</artifactId>
-        <groupId>me.ecmephi.task</groupId>
+        <groupId>ru.ecmephi</groupId>
         <version>1.0</version>
     </parent>
     <packaging>war</packaging>
@@ -35,8 +35,13 @@
         </dependency>
 
         <dependency>
-            <groupId>me.ecmephi.task</groupId>
-            <artifactId>connect-ws-lib</artifactId>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.ecmephi</groupId>
+            <artifactId>user-service-ws</artifactId>
         </dependency>
 
         <!--Tests-->

@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ecmephi-task</artifactId>
-    <groupId>me.ecmephi.task</groupId>
+    <groupId>ru.ecmephi</groupId>
     <packaging>pom</packaging>
     <version>1.0</version>
     <modules>
-        <module>connect-ws-lib</module>
+        <module>user-service-ws</module>
         <module>user-service</module>
-        <module>fx-client</module>
-        <module>web-interface</module>
+        <module>client-desktop-gui</module>
+        <module>client-web-gui</module>
     </modules>
 
     <properties>
@@ -26,6 +26,7 @@
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>1.2.17</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
@@ -58,11 +59,19 @@
                 <groupId>org.hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
                 <version>2.3.4</version>
+                <scope>provided</scope>
             </dependency>
 
             <dependency>
-                <groupId>me.ecmephi.task</groupId>
-                <artifactId>connect-ws-lib</artifactId>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>5.2.3.Final</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>ru.ecmephi</groupId>
+                <artifactId>user-service-ws</artifactId>
                 <version>1.0</version>
             </dependency>
 

@@ -2,6 +2,6 @@
 <endpoints xmlns='http://java.sun.com/xml/ns/jax-ws/ri/runtime' version='2.0'>
     <endpoint
             name="UserWS"
-            implementation="me.ecmephi.task.service.UserManager"
-            url-pattern="/me/ecmephi/task/service/"/>
+            implementation="ru.ecmephi.user.service.UserManager"
+            url-pattern=""/>
 </endpoints>

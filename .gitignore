@@ -5,3 +5,4 @@
 log/
 target/
 /user-service/src/test/resources/arquillian.xml
+/user-service/src/test/wildfly_cnt/

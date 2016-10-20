@@ -2,7 +2,13 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
     <persistence-unit name="user_database">
         <properties>
-            <property name="hibernate.ejb.cfgfile" value="hibernate.cfg.xml"/>
+
+            <property name="connection.url" value="jdbc:hsqldb:hsql://localhost:9001"/>
+            <property name="connection.driver_class" value="org.hsqldb.jdbcDriver"/>
+            <property name="dialect" value="org.hibernate.dialect.HSQLDialect"/>
+
+            <property name="connection.username" value="sa"/>
+
         </properties>
     </persistence-unit>
 </persistence>
