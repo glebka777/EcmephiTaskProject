@@ -9,6 +9,8 @@
 
             <property name="connection.username" value="sa"/>
 
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+
         </properties>
     </persistence-unit>
 </persistence>

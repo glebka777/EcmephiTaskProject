@@ -47,6 +47,7 @@ public class UserManagerTester {
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml")
                 .addAsManifestResource("persistence.xml")
                 .addAsManifestResource("arquillian.xml")
+                .addAsResource("import.sql")
                 .addPackage("ru.ecmephi.user.service")
                 .addPackage("ru.ecmephi.user.service.dao")
                 .addPackage("ru.ecmephi.user.service.entity")
