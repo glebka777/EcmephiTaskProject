@@ -8,7 +8,7 @@
             <property name="dialect" value="org.hibernate.dialect.HSQLDialect"/>
 
             <property name="connection.username" value="sa"/>
-
+            
         </properties>
     </persistence-unit>
 </persistence>
