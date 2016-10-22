@@ -34,7 +34,7 @@
     <dependencyManagement>
         <dependencies>
 
-            <!--log4k logging library-->
+            <!--log4j logging library-->
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>

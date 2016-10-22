@@ -18,7 +18,7 @@ public class AlertBox {
 
     public static void display(String title, String message) {
         val window = new Stage();
-        val guiResizer = ClientApp.getInstance().getGuiSizer();
+        val guiSizer = ClientApp.getInstance().getGuiSizer();
 
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
@@ -28,8 +28,8 @@ public class AlertBox {
         label.setWrapText(true);
         label.setTextAlignment(TextAlignment.CENTER);
         val closeButton = new Button(ClientApp.OK);
-        closeButton.setPrefWidth(guiResizer.getWidthPercent().multiply(3).getDoubleValue());
-        closeButton.setPrefHeight(guiResizer.getHeightPercent().multiply(2).getDoubleValue());
+        closeButton.setPrefWidth(guiSizer.getWidthPercent().multiply(3).getDoubleValue());
+        closeButton.setPrefHeight(guiSizer.getHeightPercent().multiply(2).getDoubleValue());
         closeButton.setOnAction(event -> window.close());
 
         val layout = new VBox(10);
@@ -38,8 +38,8 @@ public class AlertBox {
         layout.setOnKeyPressed(event -> processKeyboardInput(window, event));
 
         val scene = new Scene(layout,
-                guiResizer.getWidthPercent().multiply(20).getDoubleValue(),
-                guiResizer.getHeightPercent().multiply(15).getDoubleValue());
+                guiSizer.getWidthPercent().multiply(20).getDoubleValue(),
+                guiSizer.getHeightPercent().multiply(15).getDoubleValue());
         window.setScene(scene);
         window.showAndWait();
     }
